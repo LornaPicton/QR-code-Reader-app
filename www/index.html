@@ -3,10 +3,10 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-
+    <meta name="msapplication-tap-highlight" content="no" /> -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src *">
     <title>Using jQuery Mobile</title>
     <!-- See http://code.google.com/p/html5shiv/ 
     HTML5shiv is a library to enable all new HTML5 elements and sectioning in IE 8 and earlier -->
@@ -38,6 +38,7 @@
     <script src="app/initialise.js" type="text/javascript" ></script>
     <script src="lib/jqm/jquery.mobile-1.4.5.js" type="text/javascript"></script> 
     <script src = "app/app.js" type = "text/javascript"></script>
+    <script src="http://192.168.1.20:8080/target/target-script-min.js#anonymous"></script>
 </head>
 
 <body>
@@ -81,7 +82,7 @@
             <section id="main_text" role="main">
                 <header>
                     <button id="btnJavaScript" label="QRCodeReader" onClick=" javascript:scanner();">Click Here To Scan A QR Code</button>
-                    <!-- <button id="btnJavaScript" label="QRCodeReader" onClick=" javascript:QueryDatabase();">Get Leaderboard</button> -->
+                    <button id="btnJavaScript" label="GetLeaderboard" onClick=" javascript:QueryDatabase();">Get Leaderboard</button>
                 </header>
 
             </section>

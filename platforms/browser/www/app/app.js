@@ -32,26 +32,26 @@ function scanner() {
 
 };
 
-// function QueryDatabase(){
-//     console.log("in function");
-//     $.ajax({
+function QueryDatabase(){
+    console.log("in function");
+    $.ajax({
         
-//         url : "http://svlep21.dcs.aber.ac.uk:3000/leaderboards",
-//         dataType : 'jsonp',
-//         crossDomain: false,
+        url : "http://svlep21.dcs.aber.ac.uk:3000/leaderboards",
+        dataType : 'json',
+        crossDomain: true,
         
-//         success : function(data){
-//             var leaderboard= JSON.stringify(data);
-//             window.location.href = "#student";
-//             //replace the string "AberID" on student page with the live AberID that has been retrieved from the scan
-//             document.querySelector('.results').innerHTML = leaderboard;
+        success : function(data){
+            var leaderboard= JSON.stringify(data);
+            window.location.href = "#student";
+            //replace the string "AberID" on student page with the live AberID that has been retrieved from the scan
+            document.querySelector('.results').innerHTML = leaderboard;
         
-//         },
-//         error : function(XMLHttpRequest,textStatus, errorThrown) {   
-//             $.mobile.loading( 'hide',{text:"Fetching blogs.."});  
-//             //alert("Something wrong happended on the server. Try again.."); 
-//             alert("error is " + errorThrown); 
+        },
+        error : function(XMLHttpRequest,textStatus, errorThrown) {   
+            $.mobile.loading( 'hide',{text:"Fetching blogs.."});  
+            //alert("Something wrong happended on the server. Try again.."); 
+            alert("error is " + errorThrown); 
  
-//         }
-//     })
-// }
+        }
+    })
+}
