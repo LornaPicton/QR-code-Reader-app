@@ -22,5 +22,7 @@
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <preference name="loglevel" value="DEBUG" />
+    <preference name="phonegap-version" value="cli-7.1.0" />
 </widget>

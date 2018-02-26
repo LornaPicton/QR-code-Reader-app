@@ -11,8 +11,6 @@
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+    <preference name="phonegap-version" value="cli-7.1.0" />
 </widget>
