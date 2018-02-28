@@ -32,26 +32,43 @@ function scanner() {
 
 };
 
+
 function QueryDatabase(){
     console.log("in function");
-    $.ajax({
-        
-        url : "http://svlep21.dcs.aber.ac.uk:3000/leaderboards",
-        dataType : 'json',
-        crossDomain: true,
-        
-        success : function(data){
-            var leaderboard= JSON.stringify(data);
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+           // Typical action to be performed when the document is ready:
             window.location.href = "#student";
             //replace the string "AberID" on student page with the live AberID that has been retrieved from the scan
-            document.querySelector('.results').innerHTML = leaderboard;
-        
-        },
-        error : function(XMLHttpRequest,textStatus, errorThrown) {   
-            $.mobile.loading( 'hide',{text:"Fetching blogs.."});  
-            //alert("Something wrong happended on the server. Try again.."); 
-            alert("error is " + errorThrown); 
- 
+            document.querySelector('.results').innerHTML = xhttp.responseText;
         }
-    })
+    };
+    xhttp.open("GET", "http://svlep21.dcs.aber.ac.uk:3000/leaderboards", true);
+    xhttp.send();
+
 }
+
+
+    // $.ajax({
+        
+    //     url : "http://svlep21.dcs.aber.ac.uk:3000/leaderboards",
+    //     dataType : 'json',
+    //     crossDomain: true,
+        
+    //     success : function(data){
+    //         var leaderboard= JSON.stringify(data);
+    //         window.location.href = "#student";
+    //         //replace the string "AberID" on student page with the live AberID that has been retrieved from the scan
+    //         document.querySelector('.results').innerHTML = leaderboard;
+        
+    //     },
+    //     error : function(XMLHttpRequest,textStatus, errorThrown) {   
+    //         $.mobile.loading( 'hide',{text:"Fetching blogs.."});  
+    //         //alert("Something wrong happended on the server. Try again.."); 
+    //         alert("error is " + errorThrown); 
+ 
+    //     }
+    // })
+//}
