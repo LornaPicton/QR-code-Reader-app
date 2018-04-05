@@ -6,12 +6,11 @@
     <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" /> -->
-    
-    <meta http-equiv="Content-Security-Policy" 
-          content="default-src *; 
+
+    <meta http-equiv="Content-Security-Policy" content="default-src *; 
                    style-src 'self' 'unsafe-inline' 'unsafe-eval'; 
                    script-src 'self' 'unsafe-inline' 'unsafe-eval';">
-    <title>Using jQuery Mobile</title>
+    <title>Gamification of workshops</title>
     <!-- See http://code.google.com/p/html5shiv/ 
     HTML5shiv is a library to enable all new HTML5 elements and sectioning in IE 8 and earlier -->
     <!--[if lt IE 9]>
@@ -37,15 +36,15 @@
     <script src="lib/jq/jquery-1.12.0.min.js" type="text/javascript"></script>
     <script src="lib/yqlgeo/yqlgeo.js"></script>
     <script src="cordova.js" type="text/javascript"></script>
-    <script src="app/Map.js" type="text/javascript" ></script>
-    <script src="app/Controller.js" type="text/javascript" ></script>
-    <script src="app/initialise.js" type="text/javascript" ></script>
-    <script src="lib/jqm/jquery.mobile-1.4.5.js" type="text/javascript"></script> 
-    <script src = "app/app.js" type = "text/javascript"></script>
-    <script src="http://192.168.1.20:8080/target/target-script-min.js#anonymous"></script>
+    <script src="app/Map.js" type="text/javascript"></script>
+    <script src="app/Controller.js" type="text/javascript"></script>
+    <script src="app/initialise.js" type="text/javascript"></script>
+    <script src="lib/jqm/jquery.mobile-1.4.5.js" type="text/javascript"></script>
+    <script src="app/app.js" type="text/javascript"></script>
+   
 </head>
 
-<body>
+<body onload= " javascipt:auth()">
 
     <!-- The aria-live attribute is aimed at assistive technologies such as screen readers to say
      that we are dealing with an Ajax generated page (JQM uses Ajax to populate and display
@@ -59,22 +58,19 @@
         <header class="page_header" role="banner" data-role="header" data-theme="b" data-position="fixed">
 
             <div>
-                <h1>The Future of the Web Conference</h1>
+                <h1>QR Code Scanner APP</h1>
             </div>
 
             <nav data-role="navbar">
                 <ul>
                     <li>
-                        <a href="/">Latest Posts</a>
+                        <a class="ui-btn-active ui-state-persist" data-role="tab" data-icon="home">Home</a>
                     </li>
                     <li>
-                        <a href="talks">Talks</a>
+                        <a href="#student" data-role="tab" data-icon="user">Student</a>
                     </li>
                     <li>
-                        <a href="speakers">Speakers</a>
-                    </li>
-                    <li>
-                        <a href="contact">Contact Us</a>
+                        <a onClick="javascript:logout()" data-role="tab" data-icon="action">Logout</a>
                     </li>
                 </ul>
             </nav>
@@ -86,7 +82,6 @@
             <section id="main_text" role="main">
                 <header>
                     <button id="btnJavaScript" label="QRCodeReader" onClick=" javascript:scanner();">Click Here To Scan A QR Code</button>
-                    <button id="btnJavaScript" label="GetLeaderboard" onClick=" javascript:QueryDatabase();">Get Leaderboard</button>
                 </header>
 
             </section>
@@ -97,16 +92,7 @@
         </section>
 
         <footer data-role="footer" data-position="fixed" data-theme="b">
-            <nav data-role="navbar">
-                <ul>
-                    <li>
-                        <a class="ui-btn-active ui-state-persist" data-role="tab" data-icon="home">Home</a>
-                    </li>
-                    <li>
-                        <a href="#student" data-role="tab" data-icon="bars">Student</a>
-                    </li>
-                </ul>
-            </nav>
+           
         </footer>
 
     </article>
@@ -118,27 +104,53 @@
             <div>
                 <h1>student</h1>
             </div>
+            <nav data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#home_page" data-role="tab" data-icon="home">Home</a>
+                    </li>
+                    <li>
+                        <a class="ui-btn-active ui-state-persist" data-role="tab" data-icon="user">Student</a>
+                    </li>
+                    <li>
+                        <a  onClick="javascript:logout()"  data-role="tab" data-icon="action">Logout</a>
+                    </li>
+                </ul>
+            </nav>
         </header>
-        <div class="results"></div>
+
         <section role="main" data-role="content">
-
-
-
-
+            <div class="results"></div>
         </section>
 
         <footer data-role="footer" data-position="fixed" data-theme="b">
             <nav data-role="navbar">
                 <ul>
                     <li>
-                        <a href="#home_page" data-icon="home" data-role="tab">Home</a>
+                        <a onClick=" javascript:addPoints(1);" data-icon="plus" data-role="tab">+1</a>
                     </li>
                     <li>
-                        <a class="ui-btn-active ui-state-persist" data-role="tab" data-icon="bars">Student</a>
+                        <a onClick=" javascript:addPoints(2);" data-icon="plus" data-role="tab">+2</a>
                     </li>
-
+                    <li>
+                        <a  onClick=" javascript:addPoints(3);" data-icon="plus" data-role="tab">+3</a>
+                    </li>
                 </ul>
             </nav>
+            <nav data-role="navbar">
+                <ul>
+                    <li>
+                        <a  onClick="javascript:addPoints(4);" data-icon="plus" data-role="tab">+4</a>
+                    </li>
+                    <li>
+                        <a  onClick=" javascript:addPoints(5);" data-icon="plus" data-role="tab">+5</a>
+                    </li>
+                    <li>
+                        <a  onClick=" javascript:addPoints(6);" data-icon="plus" data-role="tab">+6</a>
+                    </li>
+                </ul>
+            </nav>
+            
         </footer>
 
     </article>

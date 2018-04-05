@@ -20,10 +20,10 @@
     </author>
     <content src="index.html" />
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
-    <access origin="*" />
     <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <access origin="*" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="phonegap-version" value="cli-7.1.0" />
 </widget>

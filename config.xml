@@ -11,13 +11,14 @@
     <preference name="phonegap-version" value="cli-7.1.0" />
     <access origin="*" />
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
-    <access origin="*" />
-    <plugin name="cordova-plugin-whitelist" version="1" />
     <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <access origin="*" />
+    
+    <engine name="android" spec="~6.3.0" />
+    <plugin name="cordova-plugin-whitelist" spec="1.1.0" />
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
     <plugin name="phonegap-plugin-barcodescanner" />
-    <engine name="android" spec="~6.3.0" />
 </widget>
