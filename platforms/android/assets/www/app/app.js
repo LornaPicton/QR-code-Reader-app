@@ -138,13 +138,22 @@ function QueryDatabase (aberID) {
     headers: { authorization: 'Bearer ' + token },
 
     success: function (data) {
+console.log(data)
+      if (data.success === false) {
+        logout()
+      } else {
+   
+      
+
+
+      console.log(data)
       var student =
         'The student ' + data.name + ' has ' + data.score + ' points.'
       score = data.score
       window.location.href = '#student'
       // replace the string "AberID" on student page with the live AberID that has been retrieved from the scan
       document.querySelector('.results').innerHTML = student
-    },
+    }},
     error: function (XMLHttpRequest, textStatus, errorThrown) {
       $.mobile.loading('hide', { text: 'Fetching blogs..' })
       // alert("Something wrong happended on the server. Try again..");

@@ -1,7 +1,8 @@
 {
   "name": "com.phonegap.helloworld",
+  "css": "./css/QR-code-scanner-theme.css",
   "version": "1.0.0",
-  "displayName": "Qr Code Reader",
+  "displayName": "Gamification Score Scanner",
   "cordova": {
     "platforms": [
       "android"
