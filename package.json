@@ -1,8 +1,9 @@
 {
-  "name": "com.phonegap.helloworld",
+  "name": "QR code Scanner",
   "css": "./css/QR-code-scanner-theme.css",
   "version": "1.0.0",
   "displayName": "Gamification Score Scanner",
+  "author": "Lorna Picton",
   "cordova": {
     "platforms": [
       "android"

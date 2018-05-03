@@ -1,5 +1,4 @@
-// @author Chris Loftus
-// @version 2.0 (20th April 2017)
+
 // This class represents the user interface controller that switches
 // between the map tab and other tabs. Note that currently only
 // the map tab has Javascript associated with it.
